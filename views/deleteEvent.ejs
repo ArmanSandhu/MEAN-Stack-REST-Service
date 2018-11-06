@@ -1,0 +1,22 @@
+<%- layout('layout.ejs') %>
+<form method="POST">
+    <div class="form-group">
+        <label for="event">Event:</label>
+        <select class="form-control" id="event" name="event">
+                <% for(var i=0; i < events.length; i++) { %>
+                    <option value="<%=events[i].Activity.ActivityName %>"><%=events[i].Activity.ActivityName %></option>
+                <% } %>
+        </select>
+        <button type="submit" class="btn btn-default">Delete Event</button>
+    </div>
+</form>
+<% if(typeof error !== 'undefined') {%>
+    <div class="alert alert-danger">
+        <strong><%= error %></strong>
+    </div>
+<% } %>
+<% if(typeof msg !== 'undefined') {%>
+    <div class="alert alert-success">
+        <strong><%= msg %></strong>
+    </div>
+<% } %>

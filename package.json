@@ -1,0 +1,22 @@
+{
+  "name": "assign1",
+  "version": "1.0.0",
+  "description": "COMP 3913 Assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arman Sandhu - A00929919",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.16.2",
+    "mongojs": "^2.4.1",
+    "mongoose": "^4.13.6"
+  },
+  "engines": {
+    "node": "6.9.5"
+  }
+}

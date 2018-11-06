@@ -1,0 +1,38 @@
+<%- layout('layout.ejs') %>
+<form method="POST">
+    <div class="form-group">
+        <label for="eventID">Event ID:</label>
+        <input type="text" name="eventID" id="eventID" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="activity">Activity Name:</label>
+        <select class="form-control" id="activity" name="activity">
+            <% for(var i=0; i < activities.length; i++) { %>
+                <option value="<%=activities[i].ActivityName %>"><%=activities[i].ActivityName %></option>
+            <% } %>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="eventDate">Event Date:</label>
+        <input type="text" name="eventDate" id="eventDate" placeholder="mm/dd/yyyy" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="eventStart">Start Hour:</label>
+        <input type="text" name="eventStart" id="eventStart" placeholder="5:00 PM" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="eventEnd">End Hour:</label>
+        <input type="text" name="eventEnd" id="eventEnd" placeholder="5:00 PM" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-default">Add Event</button>
+</form>
+<% if(typeof error !== 'undefined') {%>
+    <div class="alert alert-danger">
+        <strong><%= error %></strong>
+    </div>
+<% } %>
+<% if(typeof msg !== 'undefined') {%>
+    <div class="alert alert-success">
+        <strong><%= msg %></strong>
+    </div>
+<% } %>

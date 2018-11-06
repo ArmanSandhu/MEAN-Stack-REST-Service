@@ -1,0 +1,17 @@
+<%- layout('layout.ejs') %>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Activity ID</th>
+            <th>Activity Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i < activities.length; i++) {%>
+        <tr>
+            <td><%=activities[i].ActivityID %></td>
+            <td><%=activities[i].ActivityName %></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>

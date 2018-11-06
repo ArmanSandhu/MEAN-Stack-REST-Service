@@ -1,0 +1,22 @@
+<%- layout('layout.ejs') %>
+<form method="POST">
+    <div class="form-group">
+        <label for="actID">Activity ID:</label>
+        <input type="text" name="actID" id="actID" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="actName">Activity Name:</label>
+        <input type="text" name="actName" id="actName" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-default">Add Activity</button>
+</form>
+<% if(typeof error !== 'undefined') {%>
+    <div class="alert alert-danger">
+        <strong><%= error %></strong>
+    </div>
+<% } %>
+<% if(typeof msg !== 'undefined') {%>
+    <div class="alert alert-success">
+        <strong><%= msg %></strong>
+    </div>
+<% } %>

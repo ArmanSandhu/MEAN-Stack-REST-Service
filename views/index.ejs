@@ -1,0 +1,10 @@
+<%- layout('layout.ejs') %>
+<h1><%- title %></h1>
+<p>This is the Admin Site for the final project of COMP 3913 by Arman Sandhu. Its purpose is to allow staff of The Zenith Society to manage a collection of Activites from which 
+    Events are created. These events can be updated and deleted on this Admin Site. This site also hosts the REST API that is used by the Public Facing Site to display all active events.
+</p>
+<h3>Site Use</h3>
+<p>
+    Before an Event can be created, the appropriate Activity must be created before. Then multiple Events can be scheduled from an Activity. While creating and updating events, if the event start time and end time fall within the current week, then by default the event is considered "active" and will appear on the Public Facing
+    Site. Otherwise events added that fall outside of the current week will be not active and will require an update by staff in order to change their status.
+</p>

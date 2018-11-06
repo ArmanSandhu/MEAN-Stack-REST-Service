@@ -1,0 +1,46 @@
+<%- layout('layout.ejs') %>
+<form method="POST">
+        <div class="form-group">
+                <label for="eventID">Event ID:</label>
+                <input type="text" name="eventID" id="eventID" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="event">Event Name:</label>
+                <select class="form-control" id="event" name="event">
+                    <% for(var i=0; i < events.length; i++) { %>
+                        <option value="<%=events[i].Activity.ActivityName %>"><%=events[i].Activity.ActivityName %> - <%=events[i].EventID %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="eventDate">Event Date:</label>
+                <input type="text" name="eventDate" id="eventDate" placeholder="mm/dd/yyyy" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="eventStart">Start Hour:</label>
+                <input type="text" name="eventStart" id="eventStart" placeholder="5:00 PM" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="eventEnd">End Hour:</label>
+                <input type="text" name="eventEnd" id="eventEnd" placeholder="5:00 PM" class="form-control">
+            </div>
+            <div class="form-group">
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="radio_active" value="active">Active</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" id="radio_inactive" value="inactive">InActive</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default">Update Event</button>
+</form>
+<% if(typeof error !== 'undefined') {%>
+    <div class="alert alert-danger">
+        <strong><%= error %></strong>
+    </div>
+<% } %>
+<% if(typeof msg !== 'undefined') {%>
+    <div class="alert alert-success">
+        <strong><%= msg %></strong>
+    </div>
+<% } %>

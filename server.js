@@ -10,7 +10,8 @@ var calendar = require("./routes/calendar");
 
 //Require Config
 var config = require("./config");
-var cors = require("./config/cors");
+//Require Cors for use on localhost
+//var cors = require("./config/cors");
 
 //Set up connection to MongoDB
 var mongoose = require("mongoose");
@@ -37,7 +38,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 //Enable CORS
-app.use(cors.permission);
+//app.use(cors.permission);
 
 //Use Routes
 app.use("/", index);

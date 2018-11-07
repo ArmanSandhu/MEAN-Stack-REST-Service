@@ -1,7 +1,10 @@
 $(document).ready(function(){
-
-    // Call function on page ready
-    addToInput();
+    
+    // Only Execute on Update Event Page
+    if($('form.requires-update').length > 0){
+        // Call function on page ready
+        addToInput();
+    }
 
     /*
         When a Event is selected, call the function to update form placeholders

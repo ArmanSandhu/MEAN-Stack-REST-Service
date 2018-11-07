@@ -34,9 +34,9 @@ $(document).ready(function(){
             $('#eventStart').attr('placeholder', startTime);
             $('#eventEnd').attr('placeholder', endTime);
             if (data.isActive){
-                $('#radio_active').attr('checked', true);
+                $('#radio_active').prop('checked', true);
             } else {
-                $('#radio_inactive').attr('checked', true);
+                $('#radio_inactive').prop('checked', true);
             }
         }).fail(function(){
             alert("Error Retrieving Event!");
